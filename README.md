@@ -5,6 +5,7 @@ A comprehensive CRUD-based Student Information Management portal built with the 
 ## Features
 
 ### 🔐 Authentication & Authorization
+
 - **JWT-based authentication** with secure token management
 - **Role-based access control** with two user roles:
   - **Admin**: Full CRUD operations on students and user management
@@ -13,6 +14,7 @@ A comprehensive CRUD-based Student Information Management portal built with the 
 - **Session management** with automatic token refresh
 
 ### 👥 Student Management
+
 - **Complete CRUD operations** for student records
 - **Comprehensive student profiles** including:
   - Personal information (name, contact details, demographics)
@@ -25,12 +27,14 @@ A comprehensive CRUD-based Student Information Management portal built with the 
 - **Responsive data tables** with sorting capabilities
 
 ### 📊 Grade Management
+
 - **Grade entry and management** for faculty users
 - **Automatic GPA calculation** based on grade points
 - **Grade history tracking** with semester and year information
 - **Grade validation** with predefined grade scales
 
 ### 🎨 Modern UI/UX
+
 - **Responsive design** built with Tailwind CSS
 - **Beautiful dashboard** with statistics and overview
 - **Modern form components** with validation
@@ -40,6 +44,7 @@ A comprehensive CRUD-based Student Information Management portal built with the 
 - **Mobile-friendly** interface
 
 ### 🔒 Security Features
+
 - **Input validation** on both client and server
 - **Rate limiting** to prevent abuse
 - **Helmet.js** for security headers
@@ -49,6 +54,7 @@ A comprehensive CRUD-based Student Information Management portal built with the 
 ## Tech Stack
 
 ### Backend
+
 - **Node.js** with Express.js framework
 - **MongoDB** with Mongoose ODM
 - **JWT** for authentication
@@ -58,6 +64,7 @@ A comprehensive CRUD-based Student Information Management portal built with the 
 - **express-rate-limit** for rate limiting
 
 ### Frontend
+
 - **React.js** with functional components and hooks
 - **React Router** for navigation
 - **React Hook Form** for form management
@@ -78,16 +85,18 @@ Before running this application, make sure you have the following installed:
 ## Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd students_info
    ```
 
 2. **Install dependencies**
+
    ```bash
    # Install backend dependencies
    npm install
-   
+
    # Install frontend dependencies
    cd client
    npm install
@@ -95,10 +104,11 @@ Before running this application, make sure you have the following installed:
    ```
 
 3. **Environment Setup**
+
    ```bash
    # Copy the environment example file
    cp env.example .env
-   
+
    # Edit the .env file with your configuration
    MONGODB_URI=mongodb://localhost:27017/student_management
    JWT_SECRET=your-super-secret-jwt-key-change-in-production
@@ -107,6 +117,7 @@ Before running this application, make sure you have the following installed:
    ```
 
 4. **Start MongoDB**
+
    ```bash
    # Make sure MongoDB is running on your system
    # For Windows: Start MongoDB service
@@ -115,14 +126,15 @@ Before running this application, make sure you have the following installed:
    ```
 
 5. **Run the application**
+
    ```bash
    # Development mode (runs both backend and frontend)
    npm run dev
-   
+
    # Or run separately:
    # Backend only
    npm run server
-   
+
    # Frontend only (in another terminal)
    npm run client
    ```
@@ -136,11 +148,13 @@ Before running this application, make sure you have the following installed:
 The application comes with demo users for testing:
 
 ### Admin User
+
 - **Username**: admin
 - **Password**: admin123
 - **Role**: Admin (full access)
 
 ### Faculty User
+
 - **Username**: faculty
 - **Password**: faculty123
 - **Role**: Faculty (limited access)
@@ -148,6 +162,7 @@ The application comes with demo users for testing:
 ## API Endpoints
 
 ### Authentication
+
 - `POST /api/auth/login` - User login
 - `POST /api/auth/register` - Create new user (admin only)
 - `GET /api/auth/profile` - Get user profile
@@ -155,6 +170,7 @@ The application comes with demo users for testing:
 - `GET /api/auth/users` - Get all users (admin only)
 
 ### Students
+
 - `GET /api/students` - Get all students (with pagination and filters)
 - `GET /api/students/:id` - Get student by ID
 - `POST /api/students` - Create new student (admin only)
@@ -176,10 +192,14 @@ students_info/
 │   ├── routes/            # API routes
 │   │   ├── auth.js        # Authentication routes
 │   │   └── students.js    # Student routes
-│   └── middleware/        # Custom middleware
-│       ├── auth.js        # Authentication middleware
-│       ├── validation.js  # Input validation
-│       └── errorHandler.js # Error handling
+│   └── middlewares/        # Custom middleware
+│   |   ├── auth.js        # Authentication middleware
+│   |    ├── validation.js  # Input validation
+│   |    └── errorHandler.js # Error handling
+│   └── controllers/
+│       ├── authController.js # Authentication Controller
+│       ├─ studentController.js # Student Controller
+│
 ├── client/                # Frontend code
 │   ├── public/            # Static files
 │   ├── src/               # React source code
@@ -205,12 +225,14 @@ students_info/
 ### Role-Based Access Control
 
 #### Admin Permissions
+
 - Create, read, update, and delete student records
 - Manage user accounts (create, edit, delete users)
 - View all system statistics and reports
 - Access to all features and data
 
 #### Faculty Permissions
+
 - View student records and information
 - Add and update student grades
 - View academic statistics
@@ -219,12 +241,14 @@ students_info/
 ### Student Information Management
 
 #### Personal Information
+
 - Student ID (unique identifier)
 - Full name and contact details
 - Date of birth and gender
 - Complete address information
 
 #### Academic Information
+
 - Major and minor fields of study
 - Current academic year and semester
 - Enrollment and expected graduation dates
@@ -232,6 +256,7 @@ students_info/
 - Academic status (Active, Inactive, Graduated, etc.)
 
 #### Emergency Contact
+
 - Contact person details
 - Relationship information
 - Phone and email contact
@@ -239,12 +264,14 @@ students_info/
 ### Grade Management System
 
 #### Grade Entry
+
 - Subject-based grade entry
 - Semester and year tracking
 - Automatic GPA calculation
 - Grade validation and error handling
 
 #### Grade Display
+
 - Organized grade history
 - Color-coded grade display
 - Semester-wise organization
@@ -270,4 +297,4 @@ For support and questions, please open an issue in the GitHub repository or cont
 
 - Built with modern web technologies
 - Inspired by real-world student management systems
-- Uses best practices for security and user experience 
+- Uses best practices for security and user experience
